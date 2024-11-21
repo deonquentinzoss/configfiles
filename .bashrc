@@ -29,4 +29,25 @@ journal () {
         fi
     fi
     vim `date +%Y%m%d`
+
 }
+
+function change_cwd() {
+  echo $(pwd) > ~/.cwd
+}
+
+function cwd() {
+  cd $(cat ~/.cwd);
+}
+
+function change_owd() {
+  echo $(pwd) > ~/.owd
+}
+
+function owd() {
+  cd $(cat ~/.owd);
+}
+
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+
